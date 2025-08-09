@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced-form.html</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #18bb26;
+            margin: 0;
+            padding: 20px;
+        }
+        .form-container {
+            background: rgb(179, 10, 10);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #0d84a8;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h1>Registration Form</h1>
+    <form id="registrationForm" action="/submit" method="POST">
+        <label for="username">Username <span style="color: rgb(23, 12, 167);">*</span></label>
+        <input type="text" id="username" name="username" placeholder="Enter your username" required autocomplete="username">
+
+        <label for="email">Email <span style="color: rgb(19, 10, 143);">*</span></label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required autocomplete="email">
+
+        <label for="password">Password <span style="color: rgb(30, 10, 143);">*</span></label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required minlength="8">
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" pattern="^\d{3}-\d{3}-\d{4}$" title="Format: 123-456-7890">
+
+        <label for="dob">Date of Birth <span style="color: rgb(15, 13, 158);">*</span></label>
+        <input type="date" id="dob" name="dob" required>
+
+        <label for="gender">Gender</label>
+        <select id="gender" name="gender">
+            <option value="" disabled selected>Select your gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="Prefer not to say">Prefer not to say</option>
+        </select>
+
+        <label for="bio">Bio</label>
+        <textarea id="bio" name="bio" rows="4" placeholder="Tell me about yourself" readonly></textarea>
+
+        <button type="submit">Register</button>
+    </form>
+</div>
+
+</body>
+</html>
